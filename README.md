@@ -42,8 +42,9 @@ You can install the library with pip as follows:
   
 	The previous example prints the following statistics:
   
-	'''
+	
+	```
 	Stats for  ../data/acm2.bib
 	Number of entries: 61
 	Entries per type: Counter({'inproceedings': 54, 'article': 7})
-	'''
+	```
