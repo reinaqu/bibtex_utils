@@ -9,7 +9,7 @@ You can install the library with pip as follows:
 
 # Utilities
 
-1. bibdiff. This script removes from database1 (first parameter) the entities the databases included as (second parameter).
+1. **bibdiff**. This script removes from database1 (first parameter) the entities the databases included as (second parameter).
 
 Use:
 
