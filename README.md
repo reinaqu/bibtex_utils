@@ -27,5 +27,5 @@ You can install the library with pip as follows:
 
 ---Example:
 
----<code>merge -bib acm1.bib acm2.bib ... -o output.bib</code>
+---<code>bibmerge -bib acm1.bib acm2.bib ... -o output.bib</code>
 
