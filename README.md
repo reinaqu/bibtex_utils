@@ -28,3 +28,21 @@ You can install the library with pip as follows:
   Example:
 
   <code>bibmerge -bib acm1.bib acm2.bib ... -o output.bib</code>
+
+  
+3. **bibstats**. This script prints a set of statistics about the BibTeX file given as a parameter. 
+
+Use:
+
+  <code>bibstats -bib bibtex</code>
+
+  Example:
+	
+  <code>bibstat -bib acm2.bib</code>
+  
+  The previous example prints the following statistics:
+  <code>
+  Stats for  ../data/acm2.bib
+  Number of entries: 61
+  Entries per type: Counter({'inproceedings': 54, 'article': 7})
+  </code>

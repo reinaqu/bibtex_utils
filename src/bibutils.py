@@ -9,9 +9,10 @@ from bibtexparser.bparser import BibTexParser
 import bibtexparser
 import os.path
 import sys
+from collections import Counter
 
 def load_bibtex(filename):
-    
+   
     if not (os.path.isfile(filename)):
         print("input file not found"+ filename, file=sys.stderr)
         exit(0)
@@ -69,3 +70,23 @@ def contains(entry, database):
             return True
     return False
 
+def count_entries_by_type(entries):
+    types = [entry['ENTRYTYPE'] for entry in entries]
+    return Counter(types)
+
+def get_entries_ids(entries):
+    return {entry['ID'] for entry in entries}
+
+def common_entries (db1, db2):
+    ids1 = get_entries_ids(db1.get_entry_list())
+    ids2 = get_entries_ids(db2.get_entry_list())
+    intersect = ids1 & ids2
+    return intersect
+
+
+       
+
+def print_database_stats(database):
+    entries = database.get_entry_list()
+    print ("Number of entries:" , len(entries))
+    print ("Entries per type:" , count_entries_by_type(entries))
