@@ -6,6 +6,7 @@ Created on 27 may. 2020
 '''
 from bibtexparser.bibdatabase import BibDatabase
 from bibtexparser.bparser import BibTexParser
+from bibtexparser.bwriter import BibTexWriter
 import bibtexparser
 import os.path
 import sys
@@ -33,7 +34,9 @@ def write_bibtex(db, filename):
     Writes the database into the file named filename
     '''
     with open(filename, 'w', encoding='utf-8') as bibtex_file:
-        bibtexparser.dump(db, bibtex_file)
+        writer = BibTexWriter()
+        writer.add_trailing_comma = True
+        bibtexparser.dump(db, bibtex_file,writer)
 
 def writes_bibtex(db):
     '''
