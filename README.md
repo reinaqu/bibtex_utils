@@ -9,15 +9,18 @@ You can install the library with pip as follows:
 
 # Utilities
 
-1. **bibdiff**. This script removes from database1 (first parameter) the entities the databases included as (second parameter).
+1. **bibdiff**. This script removes from database1 (first parameter) the entities the databases included as second parameter. If no -field is provided, the substraction is made by the id field of the bibtext. If the field is provided, then the substraction is made according to this field.
 
 	Use:
 
-	<code>bibdiff -min bibtex1 -sub bibtex2 ... -o bibtexresult </code>
+	<code>bibdiff -min bibtex1 -sub bibtex2 ... -field fieldname -o bibtexresult </code>
 
-	Example:
+	Examples:
 
 	<code>bibdiff -min acm.bib -sub acm1.bib -o output.bib</code>
+	<code>bibdiff -min acm.bib -sub acm1.bib acm2.bib-o output.bib</code>
+	<code>bibdiff -min scopus.bib -sub scopus1.bib -field "url" -o output.bib</code>
+	
 
 2. **bibmerge**. This script merges all the BibTeX files given as parameters. The BibTex file obtained as a result has no duplicated entries.
 
@@ -44,7 +47,7 @@ You can install the library with pip as follows:
   
 	
 	```
-	Stats for  ../data/acm2.bib
+	Stats for  acm2.bib
 	Number of entries: 61
 	Entries per type: Counter({'inproceedings': 54, 'article': 7})
 	```
